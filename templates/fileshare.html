@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./styles/style.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        {% include "base.html" %}
+        <title>File sharing</title>
+    </head>
+    <body>
+        <div class="Home">
+            <p>Welcome to File sharing Tool, Please Upload file here</p>
+        </div>
+        {% if not status %}
+        <form action="{{ url_for("uploadFile") }}" class="form" method="post">
+            <label class="form-label">Upload File:</label>
+            <input name="cloudFile" type="file"/> 
+            <button type="submit" class="btn-primary">Upload</button> 
+        </form>
+        {% endif %}
+        {% if status %}
+        <form class="form" action="{{ url_for("sendemail") }}" method="post">
+            <div>
+                <label for="mail-1">mail-1</label>
+                <input type="email" name="mail_1" aria-placeholder="Type mail"/>
+            </div>
+            <div>
+                <label for="mail-2">mail-2</label>
+                <input type="email" name="mail_2" aria-placeholder="Type mail"/>
+            </div>
+            <div>
+                <label for="mail-3">mail-3</label>
+                <input type="email" name="mail_3" aria-placeholder="Type mail"/>
+            </div>
+            <div>
+                <label for="mail-4">mail-4</label>
+                <input type="email" name="mail_4" aria-placeholder="Type mail"/>
+            </div>
+            <div>
+                <label for="mail-5">mail-5</label>
+                <input type="email" name="mail_5" aria-placeholder="Type mail"/>
+            </div>
+            <button type="submit" class="btn-primary">Send</button>
+        </form>
+        {% endif %}
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./styles/style.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        {% include "base.html" %}
+        <title>File sharing</title>
+    </head>
+    <body>
+        <div class="Home">
+            <p>Welcome to File sharing Tool, Please Sign In here</p>
+        </div>
+        <form action="{{ url_for("submitForm") }}" method="post">
+            <label for="userName">User Name: </label>
+            <input type="text" name="userName" placeholder="UserName"/>
+            <label for="password">Password: </label>
+            <input type="password" name="password" placeholder="passsword"/>
+            <button type="submit">Sign In</button>
+        </form>
+    </body>
+</html>
